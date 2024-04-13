@@ -170,8 +170,8 @@ class LstmTimeSeries(nn.Module):
 # Training Setup
 hidden_size = 128
 num_layers = 1
-learning_rate = 4e-4
-epochs = 10
+learning_rate = 3e-2
+epochs = 15
 batch_size = 1
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
