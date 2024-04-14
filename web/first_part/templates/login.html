@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="shortcut icon" href="/static/logosq.svg" type="image/png">
+    <title>Login</title>
+</head>
+<body class="bg-gradient">
+<h1 class="first" style="margin-top: 9%">ALT+F4</h1>
+<p class="first" style="margin: auto;text-align: center;"><img src="https://mediadirectiongroup.ru/upload/iblock/d3e/media_wise_logo_white%20(1).png" style="height: 70px;margin: auto;"></p>
+    <div class="formmain">
+        <form action="" method="post">
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.email(class="form", type="email", placeholder="Ваш email") }}<br>
+                {% for error in form.email.errors %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </div>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.password(class="form", type="password", placeholder="Пароль") }}<br>
+                {% for error in form.password.errors %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </div>
+                {% endfor %}
+            </p>
+            <p style="text-align: center">{{ form.remember_me() }} {{ form.remember_me.label(class="violettext") }}</p>
+            <div style="margin: auto" class="formmain">
+                <a style="text-decoration: none;">
+                <button class="loginbutton" type="submit" style="margin: auto;">
+                    <span>
+                    Войти
+                    </span>
+            </button></a></div>
+        {{ message }}
+            <a href="/register" style="width: 50px;"><p class="news_author" style="color: white; font-size: 16px;  margin-top: 10px"><span>Нет аккаунта? Зарегистрироваться</span></p></a>
+        </form>
+    </div></body>
+</html>

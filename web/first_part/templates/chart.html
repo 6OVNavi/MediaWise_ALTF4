@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Charts Line Chart</title>
+    <!-- Подключаем библиотеку Google Charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Timestamps', 'Predicted Revenue'],
+                // Вставляем данные из вашего файла CSV
+                ['2023-09-04', 61507284],
+                ['2023-09-11', 62568516],
+                ['2023-09-18', 62377132],
+                // Добавьте остальные строки данных здесь...
+            ]);
+
+            // Настройки графика
+            var options = {
+                title: 'Predicted Revenue Over Time',
+                curveType: 'function',
+                legend: { position: 'bottom' }
+            };
+
+            // Создаем объект графика и отображаем его на странице
+            var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+            chart.draw(data, options);
+        }
+    </script>
+</head>
+<body>
+    <div id="curve_chart" style="width: 900px; height: 500px"></div>
+</body>
+</html>

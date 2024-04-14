@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="shortcut icon" href="/static/logosq.svg" type="image/png">
+    <title>Registration</title>
+</head>
+<body class="bg-gradient">
+<h1 class="first" style="margin-top: 7%">ALT+F4</h1>
+<p class="first" style="margin: auto;text-align: center;"><img src="https://mediadirectiongroup.ru/upload/iblock/d3e/media_wise_logo_white%20(1).png" style="height: 70px;margin: auto;"></p>
+<div class="formmain">
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.name(class="form" , placeholder="Ваше имя") }}
+            {% for error in form.name.errors %}
+                <p class="error" style="color: white;">
+                    {{ error }}
+                </p>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.email(class="form", type="email", placeholder="Ваш email") }}
+            {% for error in form.email.errors %}
+                <p class="error" style="color: white;">
+                    {{ error }}
+                </p>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password(class="form", type="password", placeholder="Пароль") }}
+            {% for error in form.password.errors %}
+                <p class="error" style="color: white;">
+                    {{ error }}
+                </p>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password_again(class="form", type="password" , placeholder="Подтвердите пароль") }}
+            {% for error in form.password_again.errors %}
+                <p class="error" style="color: white;">
+                    {{ error }}
+                </p>
+            {% endfor %}
+        </p>
+        <div class="formmain">
+        <div class="headerbuttons1">
+            <a style="text-decoration: none;">
+            <button class="loginbutton" type="submit" style="margin: auto;">
+                <span>
+                Регистрация
+                </span>
+        </button></a></div></div>
+        {{message}}
+        <a href="/login" style="width: 50px;"><p class="news_author" style="color: white; font-size: 16px; margin-top: 10px"><span>Зарегистрированы? Войти</span></p></a>
+    </form>
+</div>
+</html>

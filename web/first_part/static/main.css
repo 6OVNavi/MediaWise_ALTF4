@@ -1,0 +1,211 @@
+.first {
+    font-size: 45px;
+    text-align: center;
+    color: white;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.formmain {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-size: auto;
+    background-position: center;
+    margin: auto;
+    color: white;
+}
+
+.drop-container {
+    position: relative;
+    border: 2px dashed #fff;
+    cursor: pointer;
+    transition: background .2s ease-out, border .2s ease-in-out;
+    display: flex;
+}
+
+
+.drop-container:hover,
+.drop-container.drag-active {
+    background: #fff;
+    border-color: #111;
+    border: 2px dashed #555;
+}
+
+.drop-container:hover .drop-title,
+.drop-container.drag-active .drop-title {
+    color: #222;
+}
+
+
+input[type=file] {
+    width: 350px;
+    max-width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px
+}
+
+input[type=file]::file-selector-button {
+    margin-right: 20px;
+    border: none;
+    background: #ffffff3b;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+    font-size: 20px
+}
+
+.loginbutton {
+    margin-top: 10px;
+    font-weight: 900;
+    background-origin: padding-box;
+    background-clip: border-box;
+    color: #fff;
+    font-size: 16px;
+    line-height: 22px;
+    max-height: 48px;
+    min-height: 48px;
+    padding-top: 12px;
+    padding-right: 20px;
+    padding-bottom: 12px;
+    padding-left: 20px;
+    border: 2px solid;
+    border-top-width: 2px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    cursor: pointer;
+    font-family: Onest, Medium;
+    text-decoration: none;
+    background: #fff0;
+}
+
+.loginbutton span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+.loginbutton span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.loginbutton:hover span {
+    padding-right: 25px;
+}
+
+.loginbutton:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.elements {
+    margin: auto;
+}
+
+.result {
+    font-size: 30px;
+    text-align: center;
+    margin: auto
+}
+
+.result-text {
+    font-size: 16px;
+    text-align: justify;
+    max-width: 400px;
+}
+
+.bg-gradient {
+    background: linear-gradient(45deg, #116d26, #112a6d);
+    background-size: 2000% 2000%;
+    animation: bg-gradient-animation 15s ease-in-out infinite;
+}
+
+@keyframes bg-gradient-animation {
+    0% {
+        background-position: 40% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 40% 50%;
+    }
+}
+
+
+.form {
+    font-weight: 900;
+    background-origin: padding-box;
+    background-clip: border-box;
+    color: black;
+    background-color: white;
+    border-radius: 12px;
+    line-height: 22px;
+    max-height: 48px;
+    min-height: 12px;
+    padding: 12px 20px;
+    border: 3px solid;
+    border-radius: 15px;
+    display: flex;
+    margin: auto;
+    font-size: 15px;
+    min-width: 300px;
+    margin: 5px
+}
+
+
+.progress {
+  background: rgba(255,255,255,0.1);
+  justify-content: flex-start;
+  border-radius: 100px;
+  align-items: center;
+  position: relative;
+  padding: 0 5px;
+  display: flex;
+  height: 40px;
+  width: 500px;
+}
+
+.progress-value {
+  animation: load 3s normal forwards;
+  box-shadow: 0 10px 40px -10px #fff;
+  border-radius: 100px;
+  background: #fff;
+  height: 30px;
+  width: 0;
+  animation: load 5s infinite linear ;
+}
+
+@keyframes load {
+  0% { width: 0; }
+  80% { width: 100%; }
+  90% { width: 0; }
+  100% { width: 0; }
+  animation-iteration-count:infinite;
+  -moz-animation-iteration-count:infinite;
+  -webkit-animation-iteration-count:infinite;
+}
+
+.news_author {
+    text-align: center;
+    font-size: 20px;
+    margin: 0;
+    padding-left: 2%;
+    padding-right: 2%;
+    color: #0039A6;
+    text-decoration: underline;
+    font-weight: 900;
+}
