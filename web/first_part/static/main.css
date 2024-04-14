@@ -1,3 +1,9 @@
+* {
+    font-family: Verdana Pro
+    }
+
+
+
 .first {
     font-size: 45px;
     text-align: center;
@@ -45,7 +51,8 @@ input[type=file] {
     max-width: 100%;
     padding: 10px;
     border-radius: 10px;
-    font-size: 20px
+    font-size: 20px;
+    min-height: 45px
 }
 
 input[type=file]::file-selector-button {
